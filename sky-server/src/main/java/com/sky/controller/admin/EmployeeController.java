@@ -81,6 +81,7 @@ public class EmployeeController {
     @ApiOperation("新增员工")
     @PostMapping
     public Result save(@RequestBody EmployeeDTO employeeDTO) {
+        log.info("新增员工{}", employeeDTO);
         Integer save = employeeService.save(employeeDTO);
         if (save == 1) {
             return Result.success();
